@@ -1,0 +1,15 @@
+.header {
+    text-align: center;
+    padding:1em;
+    margin:0;
+}
+
+@media (min-width: 1024px) {
+    .header {
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+        padding-left:6vw;
+        padding-right:6vw;
+    }
+}

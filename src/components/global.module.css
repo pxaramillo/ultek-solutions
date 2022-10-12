@@ -1,0 +1,46 @@
+html {
+    font-family: 'Roboto';
+    font-size: clamp(1rem, 1vw + 1rem, 1.6rem);
+}
+
+body {
+    margin:0;
+}
+
+img {
+    max-width:100%;
+    height: auto;
+}
+
+.ultek {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: light) {
+    .ultek {
+        background: #f6f6f6;
+        color: #363636;
+    }
+    
+    hr {
+        border-top:1px solid black;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .ultek {
+        background: #000068;
+        color: #f6f6f6;
+    }
+
+    p {
+        font-weight:300;
+        line-height: 1.6;
+    }
+
+    hr {
+        border-top:1px solid white;
+    }
+}

@@ -12,8 +12,9 @@ const config: GatsbyConfig = {
   plugins: [{
     resolve: 'gatsby-source-wordpress',
     options: {
-      "url": "http://localhost/ultek/graphql"
-    }
+      url: process.env.WPGRAPHQL_URL || 
+      "http://localhost/ultek/graphql",
+    },
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
@@ -26,7 +27,38 @@ const config: GatsbyConfig = {
       "path": "./src/images/"
     },
     __key: "images"
-  }]
+  }, {
+    resolve: 'gatsby-omni-font-loader',
+    options: {
+      enableListener: true,
+      preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+      web: [
+        {
+          name: `Roboto`,
+          file: `https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap`,
+        },
+      ],
+    },
+  }, {
+    resolve: `gatsby-plugin-transition-link`
+  },
+  `gatsby-transformer-sharp`,
+  `gatsby-plugin-sharp`,
+  {
+    // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      name: `Gatsby Starter WordPress Blog`,
+      short_name: `GatsbyJS & WP`,
+      start_url: `/`,
+      background_color: `#ffffff`,
+      theme_color: `#663399`,
+      display: `minimal-ui`,
+      icon: `content/assets/gatsby-icon.png`,
+    },
+  },
+
+  ]
 };
 
 export default config;
