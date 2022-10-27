@@ -7,6 +7,7 @@ import Header from "./header";
 import * as styles from './global.module.css';
 import * as contentStyles from './content.module.css';
 import Banner from './banner';
+import Footer from './footer';
 
 const Layout = ({ isHomePage, children }) => {
 
@@ -37,9 +38,7 @@ const Layout = ({ isHomePage, children }) => {
       <main className={contentStyles.pageWidth}>
         {children}
       </main>
-      <footer>
-
-      </footer>
+      <Footer />
     </div>
   );
 };

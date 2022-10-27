@@ -9,9 +9,6 @@ const Nav = () => {
   return (
     <div>
       <button className={styles.btn}>
-        <SearchIcon />
-      </button>
-      <button className={styles.btn}>
         <DarkModeIcon />
       </button>
       <button className={styles.btn}>

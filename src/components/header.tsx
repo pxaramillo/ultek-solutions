@@ -1,14 +1,19 @@
 import React from "react";
 import Nav from "./nav";
+import Logo from "./logo";
 
 import * as styles from "./header.module.css";
+import Searchbar from "./searchbar";
 
 const Header = () => {
   return (
     <>
       <header className={styles.header}>
-        <h1>ULTEK SOLUTIONS</h1>
-        <Nav />
+        <div className={styles.headerContainer}>
+          <Logo />
+          <Searchbar />
+          <Nav />
+        </div>
       </header>
     </>
   );

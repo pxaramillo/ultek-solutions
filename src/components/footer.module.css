@@ -1,4 +1,7 @@
-.pageWidth {
+.footer {
+    background:#000068;
+	color:white;
+	border-top:1px solid #363636;
     padding-left:16vw;
     padding-right:16vw;
     padding-top:6vh;

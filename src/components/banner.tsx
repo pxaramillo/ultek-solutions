@@ -1,4 +1,5 @@
 import { getPlaceholderProps } from "gatsby-plugin-image/dist/src/components/hooks";
+import Logo from "./logo";
 import * as React from "react";
 
 import * as styles from "./banner.module.css";
@@ -7,7 +8,7 @@ const Banner = (props) => {
   return (
     <header className={styles.header}>
       <div className={styles.foreground}>
-        <h1>{props.title}</h1>
+        <Logo />
         <p>{props.message}</p>
         <div>
           <button className={styles.btnPrimary}>{props.primaryButton}</button>

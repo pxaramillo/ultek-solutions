@@ -2,14 +2,18 @@
     text-align: center;
     padding:1em;
     margin:0;
+    background: #000068;
+    color: #f6f6f6;
+    border-bottom:1px solid #363636;
+    padding-left:16vw;
+    padding-right:16vw;
 }
 
 @media (min-width: 1024px) {
-    .header {
-        display:flex;
-        justify-content: space-between;
-        align-items:center;
-        padding-left:6vw;
-        padding-right:6vw;
+    .headerContainer {
+       display:grid;
+       grid-template-columns:1fr 2fr 1fr;
+	   grid-gap:6vw;
+       align-items:center;
     }
 }
