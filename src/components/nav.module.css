@@ -1,19 +1,31 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .btn {
     background: none;
     border: 1px solid black;
     border-radius:0;
     margin:6px;
     cursor: pointer;
-    transition: all 0.1s;;
+    transition: all 0.1s;
 }
 
 .btn:hover {
-    transform: scale(1.1);
+    background: blue;
 }
 
 @media (prefers-color-scheme: dark) {
     .btn {
         color:white;
         border: 1px solid white;
+    }
+}
+
+@media (min-width: 1024px) {
+    .navbar {
+        align-items: flex-end;
     }
 }
