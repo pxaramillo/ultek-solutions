@@ -7,3 +7,12 @@
     padding-top:6vh;
     padding-bottom:6vh;
 }
+
+@media (min-width:1024px) {
+    .footerGrid {
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap:6vw;
+    }
+
+}
