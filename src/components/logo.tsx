@@ -5,7 +5,7 @@ import * as styles from './logo.module.css';
 
 const Logo = () => {
     return (
-        <figure class={styles.logoContainer}>
+        <figure className={styles.logoContainer}>
             <Link to="/"><img src="https://svgshare.com/i/nfM.svg" className={styles.logo} />
             </Link>
         </figure>
