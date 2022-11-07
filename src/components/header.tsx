@@ -7,15 +7,13 @@ import Searchbar from "./searchbar";
 
 const Header = () => {
   return (
-    <>
-      <header className={styles.header}>
-        <div className={styles.headerContainer}>
-          <Logo />
-          <Searchbar />
-          <Nav />
-        </div>
-      </header>
-    </>
+    <header className={styles.header}>
+      <div className={styles.headerContainer}>
+        <Logo />
+        <Searchbar />
+        <Nav />
+      </div>
+    </header>
   );
 };
 
