@@ -47,7 +47,7 @@ const Shop = () => {
                 <section>
                     <h1>Gatsby Theme Woocommerce</h1>
                     <ProductsList products={products} />
-                </>
+                </section>
             </div>
         ); 
 }
