@@ -4,6 +4,7 @@ import Logo from "./logo";
 
 import * as styles from "./header.module.css";
 import Searchbar from "./searchbar";
+import NavList from "./nav-list";
 
 const Header = () => {
   return (
@@ -15,6 +16,7 @@ const Header = () => {
           <Nav />
         </div>
       </header>
+      <NavList />
     </>
   );
 };
