@@ -8,6 +8,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import Button from "react-bootstrap/Button";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import * as styles from './header.module.css';
 
 export default function Header() {
   return (
@@ -18,9 +19,9 @@ export default function Header() {
           bg="dark"
           variant="dark"
           sticky="top"
-          className="mb-3 justifyBetween"
+          className={`mb-3 justifyBetween`, styles.navbarDark}
         >
-          <Container>
+          <Container className={styles.container}>
             <Row>
             <Navbar.Brand href="/">
               <img

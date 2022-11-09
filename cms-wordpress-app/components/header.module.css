@@ -1,0 +1,23 @@
+.navbarDark {
+    background:#000068 !important;
+    color:#f6f6f6 !important;
+    border-bottom:1px solid #363636;
+    padding:2vh !important;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-left:2.6vw;
+    padding-right:2.6vw;
+}
+
+@media screen and (min-width:1024px) {
+    .container {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important; 
+    }
+}

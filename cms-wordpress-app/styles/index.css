@@ -111,5 +111,6 @@
 }
 
 html, body {
-  background:#161616;
+  background:#161616 !important;
+  color:#f6f6f6 !important;
 }
