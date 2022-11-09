@@ -3,26 +3,26 @@ import { useRouter } from "next/router";
 
 const variants = {
   fadeIn: {
-    y: 100,
+    x: 1920,
     opacity: 0,
     transition: {
-      duration: 1,
+      duration: 0.5,
       ease: "easeInOut"
     }
   },
   inactive: {
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: {
-      duration: 1,
+      duration: 0.5,
       ease: "easeInOut"
     }
   },
   fadeOut: {
     opacity: 0,
-    y: -100,
+    x: -1920,
     transition: {
-      duration: 1,
+      duration: 0.5,
       ease: "easeInOut"
     }
   }
