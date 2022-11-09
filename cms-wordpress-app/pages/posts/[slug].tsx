@@ -13,6 +13,7 @@ import PostTitle from "../../components/post-title";
 import Tags from "../../components/tags";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api";
 import { CMS_NAME } from "../../lib/constants";
+import { motion, useScroll } from "framer-motion"
 
 export default function Post({ post, posts, preview }) {
   const router = useRouter();
@@ -21,6 +22,8 @@ export default function Post({ post, posts, preview }) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  const { scrollYProgress } = useScroll();
 
   return (
     <Layout preview={preview}>
@@ -40,6 +43,7 @@ export default function Post({ post, posts, preview }) {
                   content={post.featuredImage?.node.sourceUrl}
                 />
               </Head>
+              <motion.div style={{ scaleX: scrollYProgress }} />  
               <PostHeader
                 title={post.title}
                 coverImage={post.featuredImage}

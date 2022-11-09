@@ -41,7 +41,7 @@ export default function Header() {
                 className="me-2"
                 aria-label="Search"
               />
-              <Button variant="outline-success">Search</Button>
+              <Button variant="primary">Search</Button>
             </Form>
             </Row>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />

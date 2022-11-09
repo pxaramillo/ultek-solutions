@@ -107,7 +107,7 @@
 /* Custom Utils */
 
 .justifyBetween {
-  justify-content: space-between;
+  justify-content: space-between !important;
 }
 
 html, body {
