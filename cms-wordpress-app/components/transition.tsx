@@ -1,30 +1,29 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
+import * as styles from './transition.module.css';
 
 const variants = {
   fadeIn: {
-    x: 1280,
+    y: 100,
     opacity: 0,
     transition: {
-      duration: 0.5,
+      duration: 1,
       ease: "easeInOut"
     }
   },
   inactive: {
     opacity: 1,
-    x: 0,
+    y: 0,
     transition: {
-      type: "spring",
-      stiffness: "100",
-      duration: 0.3,
-      ease: "linear"
+      duration: 1,
+      ease: "easeInOut"
     }
   },
   fadeOut: {
     opacity: 0,
-    x: -1280,
+    y: -100,
     transition: {
-      duration: 0.5,
+      duration: 1,
       ease: "easeInOut"
     }
   }
@@ -38,8 +37,8 @@ const Transition = ({ children }) => {
   const { asPath } = useRouter();
 
   return (
-    <div className="effect-2">
-      <AnimatePresence initial={true} mode="wait">
+    <div className={styles.effect2}>
+      <AnimatePresence initial={true} exitBeforeEnter>
         <motion.div
           key={asPath}
           variants={variants}

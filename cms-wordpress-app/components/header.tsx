@@ -23,7 +23,7 @@ export default function Header() {
         >
           <Container className={styles.container}>
             <Row>
-            <Navbar.Brand href="/">
+            <Link href="/" passHref><Navbar.Brand href="/">
               <img
                 alt=""
                 src="https://svgshare.com/i/nfM.svg"
@@ -31,7 +31,7 @@ export default function Header() {
                 height="180"
                 className="d-inline-block align-top"
               />{" "}
-            </Navbar.Brand>
+            </Navbar.Brand></Link>
             </Row>
             <Row>
             <Form className="d-flex">
@@ -57,8 +57,8 @@ export default function Header() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="/">Home</Nav.Link>
-                  <Nav.Link href="/shop">Shop</Nav.Link>
+                  <Link href="/" passHref><Nav.Link href="/">Home</Nav.Link></Link>
+                  <Link href="/shop" passHref><Nav.Link href="/shop">Shop</Nav.Link></Link>
                   <NavDropdown
                     title="Dropdown"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
