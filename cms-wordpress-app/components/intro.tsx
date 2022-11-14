@@ -6,7 +6,7 @@ export default function Intro() {
   return (
     <section className={styles.intro} style={{backgroundImage:"url(/servers.jpg)",backgroundPosition: "center", backgroundAttachment:"fixed", backgroundSize:"cover"}}>
       <img src="https://svgshare.com/i/nfM.svg" height="720px" width="720px"/>
-      <nbsp />
+      <br/>
       <h2>By IT Guys for IT Guys</h2>
     </section>
   )
