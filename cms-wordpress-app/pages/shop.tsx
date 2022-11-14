@@ -4,9 +4,9 @@ import Layout from "../components/layout";
 import Header from "../components/header";
 import Container from '../components/container';
 
-const Shop = () => {
+const Shop = (/*{allPosts: { edges }, preview }*/) => {
     return (
-        <Layout>
+        <Layout /*preview={preview} */>
              <Head>
                 <title>SHOP - Ultek Solutions</title>
             </Head>
