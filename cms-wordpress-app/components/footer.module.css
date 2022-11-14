@@ -4,3 +4,20 @@
     border:1px solid #363636;
     padding:2vh;
 }
+
+.social {
+    display:flex;
+    flex-direction:row;
+}
+
+.social li {
+    padding-left: 6px;
+}
+
+@media (min-width: 1024px) {
+    .errata {
+        display:flex;
+        align-items:center;
+        justify-content: space-between;
+    }
+}
