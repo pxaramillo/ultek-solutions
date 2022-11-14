@@ -17,6 +17,9 @@ export default function Index({ allPosts: { edges }, preview }) {
 
   return (
     <Layout preview={preview}>
+      <Head>
+        <title>Ultek Solutions</title>
+      </Head>
       <Header />
       <Container>
         <Intro />
