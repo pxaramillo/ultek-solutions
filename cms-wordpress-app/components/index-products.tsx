@@ -1,24 +1,15 @@
-import Head from "next/head";
-import { GetStaticProps } from "next";
-import Layout from "../components/layout";
-import Header from "../components/header";
-import Container from "../components/container";
-import { FETCH_ALL_PRODUCTS_QUERY } from "../lib/shop-queries";
-import client from "../utils/apollo/apollo-client";
-import {
-  filteredVariantPrice,
-  paddedPrice,
-} from "../utils/functions/functions";
-import Link from "next/link";
-import { v4 as uuidv4 } from "uuid";
-import Meta from "../components/meta";
-import Footer from "../components/footer";
+import Link from 'next/link';
+import { v4 as uuidv4 } from 'uuid';
 
+import { filteredVariantPrice, paddedPrice } from '../utils/functions/functions';
 
-const Shop = ({ products }) => {
-  <div>
-     <Meta />
-     <Header />
+/**
+ * Displays all of the products as long as length is defined.
+ * Does a map() over the props array and utilizes uuidv4 for unique key values.
+ * @param {Object} products
+ */
+const IndexProducts = ({ products }) => {
+  return (
     <section className="container mx-auto bg-white">
       <div id="product-container" className="flex flex-wrap items-center">
         {products ? (
@@ -36,13 +27,13 @@ const Shop = ({ products }) => {
             }) => {
               // Add padding/empty character after currency symbol here
               if (price) {
-                price = paddedPrice(price, "kr");
+                price = paddedPrice(price, 'kr');
               }
               if (regularPrice) {
-                regularPrice = paddedPrice(regularPrice, "kr");
+                regularPrice = paddedPrice(regularPrice, 'kr');
               }
               if (salePrice) {
-                salePrice = paddedPrice(salePrice, "kr");
+                salePrice = paddedPrice(salePrice, 'kr');
               }
 
               return (
@@ -55,7 +46,7 @@ const Shop = ({ products }) => {
                       slug
                     )}?id=${encodeURIComponent(databaseId)}`}
                   >
-                    <Link>
+                    <a>
                       {image ? (
                         <img
                           id="product-image"
@@ -73,7 +64,7 @@ const Shop = ({ products }) => {
                           }
                         />
                       )}
-                    </Link>
+                    </a>
                   </Link>
 
                   <Link
@@ -81,13 +72,13 @@ const Shop = ({ products }) => {
                       slug
                     )}?id=${encodeURIComponent(databaseId)}`}
                   >
-                    <Link>
+                    <a>
                       <div className="flex justify-center pt-3">
                         <p className="font-bold text-center cursor-pointer">
                           {name}
                         </p>
                       </div>
-                    </Link>
+                    </a>
                   </Link>
                   {/* Display sale price when on sale */}
                   {onSale && (
@@ -97,7 +88,7 @@ const Shop = ({ products }) => {
                         {!variations && salePrice}
                       </div>
                       <div className="pt-1 ml-2 text-gray-900 line-through">
-                        {variations && filteredVariantPrice(price, "right")}
+                        {variations && filteredVariantPrice(price, 'right')}
                         {!variations && regularPrice}
                       </div>
                     </div>
@@ -117,21 +108,7 @@ const Shop = ({ products }) => {
         )}
       </div>
     </section>
-    <Footer />
-  </div>;
+  );
 };
 
-export default Shop;
-
-export async function getStaticProps() {
-  const result = await client.query({
-    query: FETCH_ALL_PRODUCTS_QUERY,
-  });
-
-  return {
-    props: {
-      products: result.data.products.nodes,
-    },
-    revalidate: 10,
-  };
-}
+export default IndexProducts;
