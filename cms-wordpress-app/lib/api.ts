@@ -210,3 +210,41 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
 
   return data
 }
+
+export async function getAllProducts() {
+  const data = await fetchAPI(
+    `query MyQuery {
+      products(first: 200) {
+        nodes {
+          id
+          databaseId
+          name
+          onSale
+          slug
+          image {
+            sourceUrl
+          }
+          ... on SimpleProduct {
+            price
+            regularPrice
+            salePrice
+          }
+          ... on VariableProduct {
+            price
+            regularPrice
+            salePrice
+            variations {
+              nodes {
+                price
+                regularPrice
+                salePrice
+              }
+            }
+          }
+        }
+      }
+    }
+  `
+  )
+  return data.products;
+}
