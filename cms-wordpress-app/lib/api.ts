@@ -211,7 +211,7 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
   return data
 }
 
-export async function getAllProducts() {
+export async function getAllProducts(preview) {
   const data = await fetchAPI(
     `query MyQuery {
       products(first: 200) {
